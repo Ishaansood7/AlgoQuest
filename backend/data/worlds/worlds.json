@@ -1,0 +1,40 @@
+[
+  {
+    "world_id": "array_forest",
+    "name": "Array Forest",
+    "theme": "nature_and_pointers",
+    "description": "A lush, mysterious forest where pathways are indexed sequentially. Master pointers, traversals, and running state techniques.",
+    "unlocked": true,
+    "total_quests": 4,
+    "quests": [
+      {
+        "quest_id": "array_001",
+        "title": "The Lost Maximum",
+        "difficulty": "beginner",
+        "concept": "array_traversal",
+        "xp_reward": 100
+      },
+      {
+        "quest_id": "array_002",
+        "title": "The Step-by-Step Tracker",
+        "difficulty": "beginner",
+        "concept": "dry_run_tracing",
+        "xp_reward": 100
+      },
+      {
+        "quest_id": "array_003",
+        "title": "Divide and Conquer Roots",
+        "difficulty": "beginner",
+        "concept": "decomposition",
+        "xp_reward": 100
+      },
+      {
+        "quest_id": "array_004",
+        "title": "The Riddle of the Constraints",
+        "difficulty": "beginner",
+        "concept": "understanding",
+        "xp_reward": 100
+      }
+    ]
+  }
+]

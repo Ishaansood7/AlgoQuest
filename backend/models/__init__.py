@@ -1,0 +1,1 @@
+"""AlgoQuest Data Models module."""

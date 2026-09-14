@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q1_understanding",
+    "skill_dimension": "understanding",
+    "question": "You are given an array of daily temperatures: `temps = [73, 74, 75, 71, 69, 72, 76, 73]`. The goal is to find the number of days you must wait until a warmer day for each index. What should be returned for a day if no future day is warmer?",
+    "code_snippet": null,
+    "options": [
+      "-1 or 0 indicating no warmer day exists in the remaining array",
+      "The temperature of the next day",
+      "The maximum temperature of the entire week",
+      "Throw an array index out of bounds error"
+    ],
+    "correct_option": 0,
+    "explanation": "In warm temperature / next greater element problems, if no future warmer day exists, the standard convention is returning 0 or -1 according to the problem constraints.",
+    "weight": 100
+  },
+  {
+    "id": "q2_concept",
+    "skill_dimension": "concept_recognition",
+    "question": "You are asked to check whether an array contains any duplicate values. You want an average time complexity of O(N) and are willing to use O(N) auxiliary space. Which data structure or technique is best suited?",
+    "code_snippet": null,
+    "options": [
+      "A nested loop comparing every pair (brute force)",
+      "A Hash Set to track seen elements in O(1) average lookup",
+      "A Binary Search Tree with random rotations",
+      "A 2D matrix storing all element differences"
+    ],
+    "correct_option": 1,
+    "explanation": "A Hash Set allows O(1) average time insertions and lookups, allowing duplicate detection in a single linear O(N) pass.",
+    "weight": 100
+  },
+  {
+    "id": "q3_decompose",
+    "skill_dimension": "decomposition",
+    "question": "You need to compute the running prefix sum array `prefix` where `prefix[i] = nums[0] + ... + nums[i]`. Which logical decomposition of steps is the most efficient and clear?",
+    "code_snippet": null,
+    "options": [
+      "1. Calculate total sum of array. 2. Subtract from right to left.",
+      "1. Initialize `prefix` with the same size. 2. Set `prefix[0] = nums[0]`. 3. Loop `i` from 1 to N-1: `prefix[i] = prefix[i-1] + nums[i]`.",
+      "1. For every index `i`, run an inner loop from `0` to `i` summing up elements.",
+      "1. Sort the array. 2. Add each element to the adjacent index."
+    ],
+    "correct_option": 1,
+    "explanation": "Decomposing prefix sum into setting base case prefix[0] and then computing prefix[i] from prefix[i-1] + nums[i] achieves clean O(N) time and avoids redundant nested summations.",
+    "weight": 100
+  },
+  {
+    "id": "q4_predict",
+    "skill_dimension": "prediction",
+    "question": "Predict the final value of `count` after executing this code snippet:",
+    "code_snippet": "count = 0\nfor x in [3, 8, 2, 9, 4]:\n    if x % 2 == 0:\n        count += x\n    else:\n        count -= 1",
+    "options": [
+      "12",
+      "11",
+      "14",
+      "9"
+    ],
+    "correct_option": 0,
+    "explanation": "Trace: x=3 (-1), x=8 (-1+8=7), x=2 (7+2=9), x=9 (9-1=8), x=4 (8+4=12). The final value is 12.",
+    "weight": 100
+  },
+  {
+    "id": "q5_dry_run",
+    "skill_dimension": "dry_run",
+    "question": "Dry run the maximum-finding algorithm on `arr = [4, 1, 7, 2]`. Suppose `current_max` is initialized to `arr[0]` (4). What is the value of `current_max` immediately after inspecting index 2 (element 7)?",
+    "code_snippet": "current_max = arr[0]\nfor i in range(1, len(arr)):\n    if arr[i] > current_max:\n        current_max = arr[i]",
+    "options": [
+      "1",
+      "4",
+      "7",
+      "2"
+    ],
+    "correct_option": 2,
+    "explanation": "Initially current_max = 4. At i=1 (val 1), 1 > 4 is False (remains 4). At i=2 (val 7), 7 > 4 is True (current_max updates to 7).",
+    "weight": 100
+  },
+  {
+    "id": "q6_problem_solving",
+    "skill_dimension": "problem_solving",
+    "question": "You have an unsorted array of size N. You must find the second largest distinct number. Which strategy is most optimal in both time and extra space?",
+    "code_snippet": null,
+    "options": [
+      "Sort the array descending in O(N log N) time and return the second element (ignoring duplicates)",
+      "Maintain two variables `first_max` and `second_max` and update them in a single O(N) pass with O(1) space",
+      "Generate all possible pairs in O(N^2) time to find the second largest",
+      "Insert all numbers into a full binary matrix and compute determinants"
+    ],
+    "correct_option": 1,
+    "explanation": "Maintaining two tracking variables allows finding the second largest element in a single linear pass O(N) with O(1) extra space without full sorting.",
+    "weight": 100
+  }
+]

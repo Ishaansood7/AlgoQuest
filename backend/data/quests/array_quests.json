@@ -1,0 +1,214 @@
+[
+  {
+    "quest_id": "array_001",
+    "title": "The Lost Maximum",
+    "world_id": "array_forest",
+    "concept": "Finding the maximum value in an array",
+    "difficulty": "beginner",
+    "description": "Deep in Array Forest, an ancient monolith holds a series of numbered stones. Find the stone bearing the maximum value to unlock the path forward.",
+    "learning_objective": "Master single-pass linear traversal, maintaining running maximum state, and loop invariant verification.",
+    "sample_input": [3, 7, 2, 9, 5],
+    "expected_output": 9,
+    "prerequisites": [],
+    "xp_reward": 100,
+    "hints": [
+      "What are you being asked to find?",
+      "Think about what you can remember while scanning the array.",
+      "Keep track of the largest value seen so far."
+    ],
+    "stages": [
+      {
+        "stage_id": "understand",
+        "name": "Understand the Goal",
+        "skill_dimension": "understanding",
+        "type": "multiple_choice",
+        "prompt": "What is the primary objective and return value of this problem?",
+        "code_snippet": null,
+        "options": [
+          "Find and return the largest numerical element present in the array",
+          "Sort the entire array in ascending order",
+          "Count how many even numbers exist in the array",
+          "Return the index of the first element"
+        ],
+        "expected_answer": 0,
+        "max_points": 10,
+        "hints": [
+          "Review the problem objective: what value needs to be retrieved from the stones?",
+          "Focus on the word 'maximum' — it's about the value, not the array ordering."
+        ],
+        "explanation": "The problem specifically asks to identify the single largest number in the array."
+      },
+      {
+        "stage_id": "identify",
+        "name": "Identify the Pattern",
+        "skill_dimension": "concept_recognition",
+        "type": "multiple_choice",
+        "prompt": "Which algorithmic pattern is best suited to find the maximum in an unsorted array of unknown size?",
+        "code_snippet": null,
+        "options": [
+          "Binary search on the unsorted array",
+          "Single-pass linear traversal tracking the largest element seen so far",
+          "Breadth-first graph traversal",
+          "Recursive backtracking generating all permutations"
+        ],
+        "expected_answer": 1,
+        "max_points": 10,
+        "hints": [
+          "Since the array is unsorted, any element could be the maximum.",
+          "Every element must be inspected at least once in O(N) time."
+        ],
+        "explanation": "A single linear pass O(N) tracking `current_max` is the optimal approach for an unsorted array."
+      },
+      {
+        "stage_id": "decompose",
+        "name": "Decompose into Steps",
+        "skill_dimension": "decomposition",
+        "type": "multiple_choice",
+        "prompt": "What is the correct logical sequence of steps to decompose this algorithm?",
+        "code_snippet": null,
+        "options": [
+          "1. Initialize max to arr[0] -> 2. Loop i from 1 to N-1 -> 3. If arr[i] > max, update max -> 4. Return max",
+          "1. Sort array descending -> 2. Sum elements -> 3. Return average",
+          "1. Return arr[0] immediately without checking other elements",
+          "1. Iterate backwards -> 2. If element < max, terminate loop immediately"
+        ],
+        "expected_answer": 0,
+        "max_points": 15,
+        "hints": [
+          "You must establish a baseline running maximum before iterating.",
+          "Each step compares the next element with the current champion."
+        ],
+        "explanation": "Setting the baseline to the first element and updating whenever a strictly larger element appears is the standard decomposition."
+      },
+      {
+        "stage_id": "predict",
+        "name": "Predict Execution",
+        "skill_dimension": "prediction",
+        "type": "multiple_choice",
+        "prompt": "Given `arr = [3, 7, 2, 9, 5]` and `current_max` initialized to 3, how many times will `current_max` be updated during the loop?",
+        "code_snippet": "current_max = arr[0] # 3\nfor i in range(1, len(arr)):\n    if arr[i] > current_max:\n        current_max = arr[i]",
+        "options": [
+          "1 time",
+          "2 times (when encountering 7 and 9)",
+          "4 times",
+          "0 times"
+        ],
+        "expected_answer": 1,
+        "max_points": 15,
+        "hints": [
+          "Test each stone sequentially: 7 > 3 (update?), 2 > 7 (update?), 9 > 7 (update?), 5 > 9 (update?).",
+          "Count only when the 'if' condition evaluates to True."
+        ],
+        "explanation": "The maximum updates at element 7 (7 > 3) and element 9 (9 > 7). Element 2 and 5 do not trigger updates. Total updates = 2."
+      },
+      {
+        "stage_id": "dry_run",
+        "name": "Dry Run State Tracing",
+        "skill_dimension": "dry_run",
+        "type": "multiple_choice",
+        "prompt": "Trace the variable state: At index `i = 3` (inspecting element 9), what is `current_max` BEFORE and AFTER that step?",
+        "code_snippet": "arr = [3, 7, 2, 9, 5]\n# At i = 3, arr[i] is 9",
+        "options": [
+          "Before: 7, After: 9",
+          "Before: 3, After: 7",
+          "Before: 9, After: 9",
+          "Before: 2, After: 5"
+        ],
+        "expected_answer": 0,
+        "max_points": 20,
+        "hints": [
+          "What was the value of current_max after index 2 (element 2 was evaluated)?",
+          "What happens when 9 is compared with 7?"
+        ],
+        "explanation": "Before index 3, `current_max` was 7. Since 9 > 7, `current_max` becomes 9."
+      },
+      {
+        "stage_id": "solve",
+        "name": "Solve & Code Pattern",
+        "skill_dimension": "problem_solving",
+        "type": "solution_input",
+        "prompt": "Select or provide the core assignment statement executed inside the loop when a larger element is found:",
+        "code_snippet": "for num in nums[1:]:\n    # Core update logic goes here",
+        "options": [
+          "if num > max_val: max_val = num",
+          "if num < max_val: max_val = num",
+          "max_val += num",
+          "num = max_val"
+        ],
+        "expected_answer": 0,
+        "max_points": 20,
+        "hints": [
+          "The condition must verify that the inspected number is strictly greater than the current maximum.",
+          "The assignment must assign the new number into the maximum variable."
+        ],
+        "explanation": "The fundamental update logic is `if num > max_val: max_val = num`."
+      },
+      {
+        "stage_id": "explain",
+        "name": "Explain Complexity & Trade-offs",
+        "skill_dimension": "explanation",
+        "type": "multiple_choice",
+        "prompt": "Explain why this linear scan algorithm achieves O(N) time and O(1) space complexity:",
+        "code_snippet": null,
+        "options": [
+          "It visits each of the N elements exactly once in a single pass, and only uses a single tracking variable `current_max`.",
+          "It allocates a new array of size N at each loop step, requiring exponential time.",
+          "It sorts the array in-place, which is always guaranteed O(N) in all languages.",
+          "The time complexity is O(N^2) because of hidden pointer dereferencing in arrays."
+        ],
+        "expected_answer": 0,
+        "max_points": 10,
+        "hints": [
+          "Consider how many times the loop visits each array element.",
+          "Consider how much auxiliary memory is allocated besides the input array."
+        ],
+        "explanation": "Single traversal of N items requires O(N) operations. Only 1 extra variable `current_max` is maintained, which takes O(1) auxiliary space."
+      }
+    ]
+  },
+  {
+    "quest_id": "array_002",
+    "title": "The Step-by-Step Tracker",
+    "world_id": "array_forest",
+    "concept": "dry_run_tracing",
+    "difficulty": "beginner",
+    "description": "Trace variable pointers across complex nested array traversals.",
+    "learning_objective": "Build intuition for pointer state tracking and dry running loops.",
+    "sample_input": [1, 2, 3, 4],
+    "expected_output": 10,
+    "prerequisites": ["array_001"],
+    "xp_reward": 100,
+    "hints": ["Focus on how variables change after each iteration."],
+    "stages": []
+  },
+  {
+    "quest_id": "array_003",
+    "title": "Divide and Conquer Roots",
+    "world_id": "array_forest",
+    "concept": "decomposition",
+    "difficulty": "beginner",
+    "description": "Decompose complex array partitioning into clean sub-problems.",
+    "learning_objective": "Learn to break array problems into independent modular steps.",
+    "sample_input": [5, 3, 8, 4],
+    "expected_output": [3, 4, 5, 8],
+    "prerequisites": ["array_001"],
+    "xp_reward": 100,
+    "hints": ["Break into base cases first."],
+    "stages": []
+  },
+  {
+    "quest_id": "array_004",
+    "title": "The Riddle of the Constraints",
+    "world_id": "array_forest",
+    "concept": "understanding",
+    "difficulty": "beginner",
+    "description": "Master constraint comprehension and edge cases in array algorithms.",
+    "learning_objective": "Identify corner cases such as empty arrays, negative values, and single elements.",
+    "sample_input": [-5, -2, -9],
+    "expected_output": -2,
+    "prerequisites": ["array_001"],
+    "xp_reward": 100,
+    "hints": ["What happens if all numbers are negative?"],
+    "stages": []
+  }
+]
