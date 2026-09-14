@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlgoQuest - Thinking Trial Step 1/5</title>
+  <meta name="description" content="Reasoning Diagnostic Trial on AlgoQuest. Practice problem decomposition and state prediction.">
+  <link rel="stylesheet" href="CSS/global.css">
+  <link rel="stylesheet" href="CSS/thinking-trial.css">
+</head>
+<body>
+
+  <!-- Navigation Bar Header -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon">🧭</div>
+        <div class="logo-text">
+          <div class="brand-title-wrap">
+            <span class="brand-title">AlgoQuest</span>
+            <span class="brand-tag">DSA Adventure</span>
+          </div>
+          <span class="brand-subtitle">Learn to Think. Code to Solve.</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="nav-center">
+      <a href="index.html" class="nav-link">
+        <span>🏠</span> Home
+      </a>
+      <a href="adventure.html" class="nav-link">
+        <span>🧭</span> Adventure
+      </a>
+      <a href="arena.html" class="nav-link">
+        <span>⚔️</span> Arena
+      </a>
+      <a href="progress.html" class="nav-link">
+        <span>📈</span> Progress
+      </a>
+      <a href="profile.html" class="nav-link">
+        <span>👤</span> Profile
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <a href="thinking-trial.html" class="btn-thinking-trial" style="background: rgba(0, 242, 254, 0.2); border-color: var(--primary-cyan);">
+        <span>✨</span> Thinking Trial
+      </a>
+      <div class="stat-pill streak">
+        <span>🔥</span> 12d
+      </div>
+      <div class="stat-pill rating">
+        <span>🎗️</span> 1284 TR
+      </div>
+      <div class="nav-user-avatar">
+        👨‍💻
+      </div>
+      <button class="btn-algobot-trigger" id="algobot-btn" title="Open AlgoBot AI Coach">
+        🤖
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Wrapper -->
+  <main class="main-wrapper">
+
+    <section class="trial-container">
+      
+      <!-- Top Header -->
+      <div class="trial-top-header">
+        <div class="trial-title-group">
+          <div class="trial-icon-box">🧠</div>
+          <div>
+            <h1 class="trial-main-heading">
+              Thinking Trial <span class="trial-step-badge">1/5</span>
+            </h1>
+            <div class="trial-sub-text">Measuring initial algorithmic reasoning &amp; problem decomposition</div>
+          </div>
+        </div>
+
+        <a href="adventure.html" class="btn-exit-trial">Exit Trial</a>
+      </div>
+
+      <!-- Main Trial Card -->
+      <div class="trial-card">
+        
+        <div class="trial-stage-tag">
+          <span>✨</span> Understanding: Problem Decoding
+        </div>
+
+        <div class="scenario-box">
+          <div class="scenario-label">SCENARIO / ALGORITHM STATE</div>
+          <p class="scenario-text">
+            Given an array of integers representing student scores, you need to find the difference between the highest and lowest score.
+          </p>
+        </div>
+
+        <h2 class="trial-question-title">
+          What are the two core values your program must identify before computing the answer?
+        </h2>
+
+        <div class="trial-options-list">
+          <div class="trial-option-item">
+            The first element and the last element
+          </div>
+
+          <div class="trial-option-item selected">
+            The maximum score and the minimum score
+          </div>
+
+          <div class="trial-option-item">
+            The total sum and the average score
+          </div>
+
+          <div class="trial-option-item">
+            The median score and the mode
+          </div>
+        </div>
+
+        <button class="btn-verify-answer" id="verify-btn">
+          Verify Answer
+        </button>
+        <div style="clear: both;"></div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- AlgoBot AI Coach Modal -->
+  <div class="modal-overlay" id="algobot-modal">
+    <div class="algobot-card">
+      <div class="algobot-header">
+        <div class="algobot-profile">
+          <div class="algobot-icon">🤖</div>
+          <div>
+            <div class="algobot-title">
+              AlgoBot AI Coach <span class="online-dot"></span>
+            </div>
+            <div class="algobot-context">Context: UNDERSTAND</div>
+          </div>
+        </div>
+        <button class="btn-close-modal" id="close-algobot">&times;</button>
+      </div>
+
+      <div class="algobot-hint-ladder">
+        <span class="ladder-label">HINT LADDER: LEVEL 1/5</span>
+        <div class="ladder-steps">
+          <span class="ladder-pill active">L1</span>
+          <span class="ladder-pill">L2</span>
+          <span class="ladder-pill">L3</span>
+          <span class="ladder-pill">L4</span>
+          <span class="ladder-pill">L5</span>
+        </div>
+      </div>
+
+      <div class="algobot-quick-actions">
+        <button class="quick-btn">💡 Nudge Me</button>
+        <button class="quick-btn">🩺 Diagnose Logic</button>
+        <button class="quick-btn">📖 Explain Invariant</button>
+      </div>
+
+      <div class="algobot-chat-body">
+        <div class="chat-bubble algobot">
+          <p>Hey adventurer! In this problem, what defines the 'difference' formula? Difference = Max - Min.</p>
+          <div class="chat-timestamp">AlgoBot • Just now</div>
+        </div>
+      </div>
+
+      <div class="algobot-input-area">
+        <input type="text" class="algobot-input" id="chat-input" placeholder="Ask AlgoBot about this step...">
+        <button class="btn-send-chat" id="send-chat-btn">&rarr;</button>
+      </div>
+    </div>
+  </div
+
+  <footer class="footer">
+    AlgoQuest DSA Adventure Platform &bull; Reasoning-First Algorithmic Learning
+  </footer>
+
+  <script src="JS/main.js"></script>
+  <script src="JS/thinking-trial.js"></script>
+</body>
+</html>

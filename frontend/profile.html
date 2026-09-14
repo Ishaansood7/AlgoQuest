@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlgoQuest - User Profile & Achievements</title>
+  <meta name="description" content="View earned badges, set preferred programming language, and manage profile settings on AlgoQuest.">
+  <link rel="stylesheet" href="CSS/global.css">
+  <link rel="stylesheet" href="CSS/profile.css">
+</head>
+<body>
+
+  <!-- Navigation Bar Header -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon">🧭</div>
+        <div class="logo-text">
+          <div class="brand-title-wrap">
+            <span class="brand-title">AlgoQuest</span>
+            <span class="brand-tag">DSA Adventure</span>
+          </div>
+          <span class="brand-subtitle">Learn to Think. Code to Solve.</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="nav-center">
+      <a href="index.html" class="nav-link">
+        <span>🏠</span> Home
+      </a>
+      <a href="adventure.html" class="nav-link">
+        <span>🧭</span> Adventure
+      </a>
+      <a href="arena.html" class="nav-link">
+        <span>⚔️</span> Arena
+      </a>
+      <a href="progress.html" class="nav-link">
+        <span>📈</span> Progress
+      </a>
+      <a href="profile.html" class="nav-link active">
+        <span>👤</span> Profile
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <button class="btn-theme-toggle" id="theme-toggle-btn" title="Toggle Day/Light &amp; Night/Dark Theme">🌙 Dark</button>
+      <a href="thinking-trial.html" class="btn-thinking-trial">
+        <span>✨</span> Thinking Trial
+      </a>
+      <div class="stat-pill streak">
+        <span>🔥</span> 12d
+      </div>
+      <div class="stat-pill rating">
+        <span>Ribbon</span> 1284 TR
+      </div>
+      <div class="nav-user-avatar">
+        👨‍💻
+      </div>
+      <button class="btn-algobot-trigger" id="algobot-btn" title="Open AlgoBot AI Coach">
+        🤖
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Wrapper -->
+  <main class="main-wrapper">
+
+    <!-- Profile Header Card -->
+    <section class="profile-header-card">
+      <div class="profile-avatar-wrap">
+        <div class="profile-avatar-box">👨‍💻</div>
+        <div class="level-badge-pill">Lv.8</div>
+      </div>
+
+      <div>
+        <div class="profile-name-wrap">
+          <h1 class="profile-user-name">Alex</h1>
+          <span class="user-role-badge">BCA / CS Student</span>
+        </div>
+
+        <p class="profile-goal">
+          Goal: Prepare for placements and build problem-solving intuition
+        </p>
+
+        <div class="profile-stats-inline">
+          <div class="p-stat streak"><span>🔥</span> 12 Days Streak</div>
+          <div class="p-stat rating"><span>Ribbon</span> 1284 Think Rating</div>
+          <div class="p-stat battles"><span>⚔️</span> 17W / 8L Battles</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-card">
+      <div class="achievements-top">
+        <div>
+          <div style="font-size: 0.72rem; font-weight: 800; color: var(--accent-orange); letter-spacing: 0.08em; text-transform: uppercase;">
+            ACHIEVEMENTS
+          </div>
+          <h2 class="achievements-title">Earned Badges (3/7)</h2>
+        </div>
+
+        <div style="font-size: 0.75rem; color: var(--text-subtle);">
+          Awarded for genuine reasoning
+        </div>
+      </div>
+
+      <div class="badges-grid">
+
+        <!-- Badge 1 (Unlocked) -->
+        <div class="badge-card unlocked">
+          <div class="unlocked-check">✓</div>
+          <div class="badge-icon-box">🏆</div>
+          <div>
+            <h3 class="badge-title">First Thought</h3>
+            <p class="badge-desc">Completed your first algorithm state prediction.</p>
+          </div>
+        </div>
+
+        <!-- Badge 2 (Unlocked) -->
+        <div class="badge-card unlocked">
+          <div class="unlocked-check">✓</div>
+          <div class="badge-icon-box">🏆</div>
+          <div>
+            <h3 class="badge-title">Dry Runner</h3>
+            <p class="badge-desc">Successfully traced through a complete execution table.</p>
+          </div>
+        </div>
+
+        <!-- Badge 3 (Locked) -->
+        <div class="badge-card locked">
+          <div class="badge-icon-box">🔒</div>
+          <div>
+            <h3 class="badge-title">Master Decomposer</h3>
+            <p class="badge-desc">Broke a high-level problem into correct sequential steps.</p>
+          </div>
+        </div>
+
+        <!-- Badge 4 (Locked) -->
+        <div class="badge-card locked">
+          <div class="badge-icon-box">🔒</div>
+          <div>
+            <h3 class="badge-title">Independent Thinker</h3>
+            <p class="badge-desc">Solved a complex algorithmic challenge without unlocking hints.</p>
+          </div>
+        </div>
+
+        <!-- Badge 5 (Unlocked) -->
+        <div class="badge-card unlocked">
+          <div class="unlocked-check">✓</div>
+          <div class="badge-icon-box">🏆</div>
+          <div>
+            <h3 class="badge-title">First Blood</h3>
+            <p class="badge-desc">Won your first competitive duel in the Code Arena.</p>
+          </div>
+        </div>
+
+        <!-- Badge 6 (Locked) -->
+        <div class="badge-card locked">
+          <div class="badge-icon-box">🔒</div>
+          <div>
+            <h3 class="badge-title">Boss Slayer</h3>
+            <p class="badge-desc">Defeated the Array Guardian in independent combat.</p>
+          </div>
+        </div>
+
+        <!-- Badge 7 (Locked) -->
+        <div class="badge-card locked">
+          <div class="badge-icon-box">🔒</div>
+          <div>
+            <h3 class="badge-title">Consistent Coder</h3>
+            <p class="badge-desc">Maintained a 7-day learning and cross-platform coding streak.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Lower Settings Grid -->
+    <div class="settings-grid">
+
+      <!-- Preferred Language -->
+      <section class="settings-card">
+        <h2 class="settings-title">
+          <span>&lt;&gt;</span> Preferred Programming Language
+        </h2>
+        <p class="settings-desc">
+          Selected language determines starter templates across all adventures and arena duels.
+        </p>
+
+        <div class="lang-grid">
+          <button class="lang-btn active">PYTHON</button>
+          <button class="lang-btn">JAVA</button>
+          <button class="lang-btn">CPP</button>
+          <button class="lang-btn">JAVASCRIPT</button>
+        </div>
+      </section>
+
+      <!-- Demo Data Reset -->
+      <section class="settings-card">
+        <h2 class="settings-title">
+          <span>🛡️</span> Demo Data &amp; Progress
+        </h2>
+        <p class="settings-desc">
+          Reset user stats, quests, badges, and learning profile to initial state for testing or fresh walk-throughs.
+        </p>
+
+        <button class="btn-reset-demo" id="reset-demo-btn">
+          Reset Progress to Initial Demo State
+        </button>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- AlgoBot AI Coach Modal -->
+  <div class="modal-overlay" id="algobot-modal">
+    <div class="algobot-card">
+      <div class="algobot-header">
+        <div class="algobot-profile">
+          <div class="algobot-icon">🤖</div>
+          <div>
+            <div class="algobot-title">
+              AlgoBot AI Coach <span class="online-dot"></span>
+            </div>
+            <div class="algobot-context">Context: USER PROFILE</div>
+          </div>
+        </div>
+        <button class="btn-close-modal" id="close-algobot">&times;</button>
+      </div>
+
+      <div class="algobot-hint-ladder">
+        <span class="ladder-label">HINT LADDER: LEVEL 1/5</span>
+        <div class="ladder-steps">
+          <span class="ladder-pill active">L1</span>
+          <span class="ladder-pill">L2</span>
+          <span class="ladder-pill">L3</span>
+          <span class="ladder-pill">L4</span>
+          <span class="ladder-pill">L5</span>
+        </div>
+      </div>
+
+      <div class="algobot-quick-actions">
+        <button class="quick-btn">💡 Nudge Me</button>
+        <button class="quick-btn">🩺 Diagnose Logic</button>
+        <button class="quick-btn">📖 Explain Invariant</button>
+      </div>
+
+      <div class="algobot-chat-body">
+        <div class="chat-bubble algobot">
+          <p>Looking sharp, Alex! You are 1 badge away from unlocking the 'Master Decomposer' achievement!</p>
+          <div class="chat-timestamp">AlgoBot • Just now</div>
+        </div>
+      </div>
+
+      <div class="algobot-input-area">
+        <input type="text" class="algobot-input" id="chat-input" placeholder="Ask AlgoBot about achievements...">
+        <button class="btn-send-chat" id="send-chat-btn">&rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    AlgoQuest DSA Adventure Platform &bull; Reasoning-First Algorithmic Learning
+  </footer>
+
+  <script src="JS/main.js"></script>
+  <script src="JS/profile.js"></script>
+</body>
+</html>

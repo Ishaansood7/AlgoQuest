@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlgoQuest - Adventure World Map</title>
+  <meta name="description" content="Explore the Array Forest DSA Adventure World Map on AlgoQuest.">
+  <link rel="stylesheet" href="CSS/global.css">
+  <link rel="stylesheet" href="CSS/adventure.css">
+</head>
+<body>
+
+  <!-- Navigation Bar Header -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon">🧭</div>
+        <div class="logo-text">
+          <div class="brand-title-wrap">
+            <span class="brand-title">AlgoQuest</span>
+            <span class="brand-tag">DSA Adventure</span>
+          </div>
+          <span class="brand-subtitle">Learn to Think. Code to Solve.</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="nav-center">
+      <a href="index.html" class="nav-link">
+        <span>🏠</span> Home
+      </a>
+      <a href="adventure.html" class="nav-link active">
+        <span>🧭</span> Adventure
+      </a>
+      <a href="arena.html" class="nav-link">
+        <span>⚔️</span> Arena
+      </a>
+      <a href="progress.html" class="nav-link">
+        <span>📈</span> Progress
+      </a>
+      <a href="profile.html" class="nav-link">
+        <span>👤</span> Profile
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <button class="btn-theme-toggle" id="theme-toggle-btn" title="Toggle Day/Light &amp; Night/Dark Theme">🌙 Dark</button>
+      <a href="thinking-trial.html" class="btn-thinking-trial">
+        <span>✨</span> Thinking Trial
+      </a>
+      <div class="stat-pill streak">
+        <span>🔥</span> 12d
+      </div>
+      <div class="stat-pill rating">
+        <span>Ribbon</span> 1284 TR
+      </div>
+      <div class="nav-user-avatar">
+        👨‍💻
+      </div>
+      <button class="btn-algobot-trigger" id="algobot-btn" title="Open AlgoBot AI Coach">
+        🤖
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Wrapper -->
+  <main class="main-wrapper">
+
+    <!-- Top World Banner -->
+    <section class="world-banner">
+      <div>
+        <div class="world-badge-group">
+          <span class="world-pill">World 1 &bull; DSA Realm</span>
+          <span class="world-tech-pill">Built with HTML5 &amp; CSS</span>
+        </div>
+        <h1 class="world-title">Array Forest</h1>
+        <p class="world-desc">
+          Master array traversal, state invariants, pointer bounds, and subarray decomposition through exploratory quests. Follow the ancient trail up to Kadane's Citadel.
+        </p>
+      </div>
+
+      <div class="world-stats-box">
+        <div class="stat-item">
+          <div class="stat-number">1/5</div>
+          <div class="stat-label">Quests Cleared</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-number">20%</div>
+          <div class="stat-label">Region Mastery</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Two-Column Adventure Grid -->
+    <div class="adventure-grid">
+
+      <!-- Left Column: World Map -->
+      <section class="map-container">
+        <div class="map-header">
+          <div class="map-title">
+            <span>🧭</span> Adventure World Map
+            <span class="tag-main">MAIN QUESTLINE</span>
+          </div>
+
+          <div class="map-view-toggle">
+            <button class="toggle-btn active" id="toggle-map">🗺️ Map</button>
+            <button class="toggle-btn" id="toggle-list">📜 List</button>
+          </div>
+        </div>
+
+        <div class="map-legend">
+          <div class="legend-item"><span class="dot cleared"></span> Cleared</div>
+          <div class="legend-item"><span class="dot active"></span> Active Quest</div>
+          <div class="legend-item"><span class="dot boss"></span> Boss Citadel</div>
+        </div>
+
+        <!-- Viewport containing Winding Nodes -->
+        <div class="map-viewport" id="map-viewport">
+          
+          <!-- SVG Connecting Glow Path -->
+          <svg class="path-svg" viewBox="0 0 500 500" preserveAspectRatio="none">
+            <path class="path-line" d="M 250 430 C 150 360, 350 280, 250 220 C 150 160, 350 100, 250 40" 
+                  fill="none" />
+          </svg>
+
+          <!-- Node 05 (Boss) -->
+          <div class="quest-node boss-node" data-node-id="5">
+            <div class="node-num">👑</div>
+            <div class="node-info">
+              <div class="node-location">🏰 KADANE'S CITADEL &bull; BOSS</div>
+              <div class="node-title">Trial of the Array Guardian</div>
+              <div class="node-meta">
+                <span class="diff-tag" style="color: #f59e0b;">Challenger</span>
+                <span class="xp-tag">+150 XP</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 04 -->
+          <div class="quest-node" data-node-id="4" style="margin-left: 80px;">
+            <div class="node-num">04</div>
+            <div class="node-info">
+              <div class="node-location">⛰️ TWIN MONOLITHS</div>
+              <div class="node-title">Two-Pointer Monoliths</div>
+              <div class="node-meta">
+                <span class="diff-tag">Intermediate</span>
+                <span class="xp-tag">+110 XP</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 03 -->
+          <div class="quest-node" data-node-id="3" style="margin-right: 90px;">
+            <div class="node-num">03</div>
+            <div class="node-info">
+              <div class="node-location">🪵 RUNIC GROVE</div>
+              <div class="node-title">The Frequency Village</div>
+              <div class="node-meta">
+                <span class="diff-tag">Intermediate</span>
+                <span class="xp-tag">+90 XP</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 02 (Active / You Are Here) -->
+          <div class="quest-node active-quest" data-node-id="2">
+            <div class="you-are-here-badge">📍 YOU ARE HERE</div>
+            <div class="node-num">02</div>
+            <div class="node-info">
+              <div class="node-location">🌫️ MIST SHALLOWS</div>
+              <div class="node-title">Search in the Mist</div>
+              <div class="node-meta">
+                <span class="diff-tag">Beginner</span>
+                <span class="xp-tag">+75 XP</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node 01 (Cleared) -->
+          <div class="quest-node cleared" data-node-id="1" style="margin-right: 110px;">
+            <div class="node-num">✓</div>
+            <div class="node-info">
+              <div class="node-location">🌲 WHISPERING MEADOW &bull; CLEARED</div>
+              <div class="node-title">The Lost Maximum</div>
+              <div class="node-meta">
+                <span class="diff-tag" style="color: #10b981;">Beginner</span>
+                <span class="xp-tag">+85 XP</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="map-status-bar">
+          <div class="status-selected">
+            Selected: <strong id="status-selected-node">Search in the Mist in Search Path</strong>
+          </div>
+          <a href="thinking-trial.html" class="btn-launch-sm">Launch &rarr;</a>
+        </div>
+      </section>
+
+      <!-- Right Column: Inspector Panel -->
+      <section class="quest-detail-panel">
+        <div class="panel-path-header">
+          <span class="path-name" id="panel-path-name">SEARCH PATH</span>
+          <span class="panel-xp-badge" id="panel-xp">+75 XP</span>
+        </div>
+
+        <h2 class="panel-quest-title" id="panel-title">Search in the Mist</h2>
+
+        <p class="panel-quest-desc" id="panel-desc">
+          Thick fog obscures the trail. You are searching for an exact runic key (target value) in an unsorted array of path stones. Locate its index or report -1 if unreachable.
+        </p>
+
+        <div class="stages-heading">
+          <span>✨ REASONING STAGES IN THIS QUEST</span>
+        </div>
+
+        <div class="stages-grid">
+          <div class="stage-pill-item">
+            <span class="stage-dot s1"></span> 1. Understand
+          </div>
+          <div class="stage-pill-item">
+            <span class="stage-dot s2"></span> 2. Identify Invariant
+          </div>
+          <div class="stage-pill-item">
+            <span class="stage-dot s3"></span> 3. Decompose Steps
+          </div>
+          <div class="stage-pill-item">
+            <span class="stage-dot s4"></span> 4. State Prediction
+          </div>
+          <div class="stage-pill-item">
+            <span class="stage-dot s5"></span> 5. Dry Run Table
+          </div>
+          <div class="stage-pill-item">
+            <span class="stage-dot s6"></span> 6. Code &amp; Test
+          </div>
+        </div>
+
+        <div class="skill-boost-box">
+          <div class="skill-boost-label">SKILL &amp; MASTERY GAIN</div>
+          <div class="skill-boost-content">
+            <div>Boosts: <span class="boost-stat" id="panel-boost-stat">decomposition</span></div>
+            <div class="boost-val" id="panel-boost-val">+8% Mastery</div>
+          </div>
+        </div>
+
+        <a href="thinking-trial.html" class="btn-launch-quest">
+          <span>▶</span> Launch Quest Experience &rarr;
+        </a>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- AlgoBot AI Coach Modal -->
+  <div class="modal-overlay" id="algobot-modal">
+    <div class="algobot-card">
+      <div class="algobot-header">
+        <div class="algobot-profile">
+          <div class="algobot-icon">🤖</div>
+          <div>
+            <div class="algobot-title">
+              AlgoBot AI Coach <span class="online-dot"></span>
+            </div>
+            <div class="algobot-context">Context: ADVENTURE MAP</div>
+          </div>
+        </div>
+        <button class="btn-close-modal" id="close-algobot">&times;</button>
+      </div>
+
+      <div class="algobot-hint-ladder">
+        <span class="ladder-label">HINT LADDER: LEVEL 1/5</span>
+        <div class="ladder-steps">
+          <span class="ladder-pill active">L1</span>
+          <span class="ladder-pill">L2</span>
+          <span class="ladder-pill">L3</span>
+          <span class="ladder-pill">L4</span>
+          <span class="ladder-pill">L5</span>
+        </div>
+      </div>
+
+      <div class="algobot-quick-actions">
+        <button class="quick-btn">💡 Nudge Me</button>
+        <button class="quick-btn">🩺 Diagnose Logic</button>
+        <button class="quick-btn">📖 Explain Invariant</button>
+      </div>
+
+      <div class="algobot-chat-body">
+        <div class="chat-bubble algobot">
+          <p>Greetings Adventurer! Selected quest: Search in the Mist. Remember to identify what invariant key you are checking before stepping into code!</p>
+          <div class="chat-timestamp">AlgoBot • Just now</div>
+        </div>
+      </div>
+
+      <div class="algobot-input-area">
+        <input type="text" class="algobot-input" id="chat-input" placeholder="Ask AlgoBot about this quest...">
+        <button class="btn-send-chat" id="send-chat-btn">&rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    AlgoQuest DSA Adventure Platform &bull; Reasoning-First Algorithmic Learning
+  </footer>
+
+  <script src="JS/main.js"></script>
+  <script src="JS/adventure.js"></script>
+</body>
+</html>

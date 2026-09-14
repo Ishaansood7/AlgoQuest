@@ -1,0 +1,188 @@
+/* AlgoQuest - High-Impact Thinking Trial Page Stylesheet */
+
+.trial-container {
+  max-width: 840px;
+  margin: 1.5rem auto;
+}
+
+.trial-top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.trial-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.trial-icon-box {
+  width: 44px;
+  height: 44px;
+  background: rgba(0, 242, 254, 0.15);
+  border: 1px solid rgba(0, 242, 254, 0.4);
+  border-radius: var(--radius-md);
+  color: var(--primary-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+}
+
+.trial-main-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 3.5vw, 1.65rem);
+  font-weight: 900;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.trial-step-badge {
+  font-size: 0.78rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--card-border);
+  color: var(--text-muted);
+  padding: 0.18rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.trial-sub-text {
+  font-size: 0.84rem;
+  color: var(--text-subtle);
+}
+
+.btn-exit-trial {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  transition: color 0.2s ease;
+  padding: 0.3rem 0.6rem;
+}
+
+.btn-exit-trial:hover {
+  color: #f43f5e;
+}
+
+/* Card Container */
+.trial-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 4.5vw, 3rem);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 242, 254, 0.1);
+}
+
+.trial-stage-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(0, 242, 254, 0.12);
+  border: 1px solid rgba(0, 242, 254, 0.35);
+  color: var(--primary-cyan);
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 2rem;
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.2);
+}
+
+.scenario-box {
+  background: rgba(5, 8, 17, 0.8);
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--primary-cyan);
+  border-radius: var(--radius-md);
+  padding: 1.35rem 1.6rem;
+  margin-bottom: 2.25rem;
+}
+
+.scenario-label {
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: var(--primary-cyan);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.scenario-text {
+  font-family: var(--font-code);
+  font-size: clamp(0.88rem, 1.8vw, 0.96rem);
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.trial-question-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 3vw, 1.55rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  line-height: 1.38;
+}
+
+.trial-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 2.75rem;
+}
+
+.trial-option-item {
+  background: rgba(5, 8, 17, 0.7);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1.35rem 1.6rem;
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.trial-option-item:hover {
+  border-color: rgba(0, 242, 254, 0.4);
+  color: #fff;
+  background: rgba(0, 242, 254, 0.05);
+  transform: translateX(4px);
+}
+
+.trial-option-item.selected {
+  border-color: var(--primary-cyan);
+  background: rgba(0, 242, 254, 0.1);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+}
+
+.btn-verify-answer {
+  float: right;
+  padding: 0.95rem 2.25rem;
+  background: linear-gradient(135deg, #00f2fe 0%, #3b82f6 100%);
+  color: #050811;
+  font-weight: 900;
+  font-size: 1rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 25px rgba(0, 242, 254, 0.4);
+  transition: all 0.25s ease;
+  letter-spacing: 0.02em;
+}
+
+.btn-verify-answer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px rgba(0, 242, 254, 0.65);
+}
+
+@media (max-width: 540px) {
+  .btn-verify-answer {
+    float: none;
+    width: 100%;
+  }
+}
